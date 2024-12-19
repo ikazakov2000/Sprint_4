@@ -109,4 +109,12 @@ public class OrderPage {
         driver.findElement(byNoticeSuccessfulOrder).isEnabled(); // Уведомление об успешном заказе
         return this;
     }
+    //Локатор поля Заказ оформлен
+    private final By orderIsProcessed = By.xpath("//div[text()='Заказ оформлен']");
+
+    //метод возвращает истину, если поле Заказ оформлен отображено
+    public boolean orderIsProcessedTextIsDisplayed() {
+
+        return driver.findElement(orderIsProcessed).isDisplayed();
+    }
 }

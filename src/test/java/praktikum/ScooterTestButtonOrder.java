@@ -3,6 +3,8 @@ package praktikum;
 import org.junit.Rule;
 import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
 public class ScooterTestButtonOrder {
 
     @Rule
@@ -18,8 +20,9 @@ public class ScooterTestButtonOrder {
 
         OrderPage orderPage = new OrderPage(driverRule.getDriver());
         orderPage.sectionForWhomScooter() // Раздел - Для кого самокат
-                .sectionAboutRentScooter()   //Раздел - Про аренду
-                .successfulOrderNotification(); // всплывающее окно с сообщением об успешном создании заказа
+                .sectionAboutRentScooter();   //Раздел - Про аренду
+                //.successfulOrderNotification(); // всплывающее окно с сообщением об успешном создании заказа
+        assertTrue(orderPage.orderIsProcessedTextIsDisplayed());
     }
 
 
@@ -33,8 +36,9 @@ public class ScooterTestButtonOrder {
 
         OrderPage orderPage = new OrderPage(driverRule.getDriver());
         orderPage.sectionForWhomScooter() //Раздел - Для кого самокат
-                .sectionAboutRentScooter() //Раздел - Про аренду
-                .successfulOrderNotification(); // всплывающее окно с сообщением об успешном создании заказа
+                .sectionAboutRentScooter(); //Раздел - Про аренду
+                //.successfulOrderNotification();// всплывающее окно с сообщением об успешном создании заказа
+        assertTrue(orderPage.orderIsProcessedTextIsDisplayed());
     }
 
 
